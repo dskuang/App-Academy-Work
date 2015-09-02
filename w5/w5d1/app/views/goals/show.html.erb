@@ -1,0 +1,12 @@
+<%=@goal.title%>
+<%=@goal.body%>
+<%= render "comments/new", type: params[:controller].capitalize.singularize %>
+<%@goal.comments.each do |comment| %>
+  <%=comment.body %>
+  <br>
+  <%=comment.created_at %>
+  <%= button_to "Edit Comment", edit_comment_url(comment), method: :get%>
+  <%= button_to "Delete Comment", comment_url(comment), method: :delete%>
+
+  <br>
+<%end %>

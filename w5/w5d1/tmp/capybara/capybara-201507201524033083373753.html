@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RspecTest</title>
+  <link rel="stylesheet" media="all" href="/assets/application.css" data-turbolinks-track="true" />
+  <script src="/assets/application.js" data-turbolinks-track="true"></script>
+  
+</head>
+<body>
+
+<h1>Edit Goal</h1>
+<form action = "http://www.example.com/goals/1" method = "post">
+  <input type = "hidden" name = "_method" value = "patch">
+  <input type = "hidden" name = "authenticity_token" value = "ne5494CKse4ewiFFSQ2nlEncVxd880hyFDn+NZEqZtrMOMOzetC1ZcHiO5T58BMD5dmI6Y6nmHJjMPRdGxNPNw==">
+  <label>Title<input type = "text" name = "goal[title]" value = "Goal 1"></label>
+  <label>Body<input type = "text" name = "goal[body]" value = "Be a baller"></label>
+  <input type = "submit" value = "Edit Goal">
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<h1> This is <%=@cat.name.capitalize%>'s page </h1>
+<ul>
+  <li>Birth Date: <%=@cat.birth_date%></li>
+  <li>Color: <%=@cat.color%></li>
+  <li>Sex: <%=@cat.sex%></li>
+  <li>Description: <%=@cat.description%></li>
+</ul>
+<br>
+<ul>
+  <% @cat.cat_rental_requests.each do |rental| %>
+    <li>StartDate: <%=rental.start_date%>  EndDate: <%=rental.end_date%></li>
+    <li>Status: <%=rental.status%>
+    <form method="post" action="/cat_rental_requests/<%=rental.id%>/approve">
+      <input value="APPROVE" type="submit" />
+    </form>
+
+    <form method="post" action="/cat_rental_requests/<%=rental.id%>/deny">
+      <input value="DENIED" type="submit" />
+    </form>
+
+  <% end %>
+</ul>
+
+<a href="<%=cats_url%>">Home</a>
+<br>
+<a href="/cat_rental_requests/new">New Rental</a>
+<br>
+<a href="/cats/<%=@cat.id%>/edit">Edit</a>
